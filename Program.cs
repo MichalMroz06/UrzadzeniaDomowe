@@ -14,7 +14,7 @@ namespace UrzadzeniaDomowe
     {
         private int numerPrania = 0;
 
-        public void ustawNumerPrania(int value)
+        public int ustawNumerPrania(int value)
         {
             if (value >= 1 && value <= 12)
             {
@@ -24,6 +24,8 @@ namespace UrzadzeniaDomowe
             {
                 numerPrania = 0;
             }
+
+            return numerPrania;
         }
     }
 
@@ -54,7 +56,12 @@ internal class Program
     {
         static void Main(string[] args)
         {
+            Pralka pralka = new Pralka();
+            Odkurzacz odkurzacz = new Odkurzacz();
             
+            Console.WriteLine("Podaj numer prania 1..12");
+            int pralkaTryb = Int32.Parse(Console.ReadLine());
+            pralka.ustawNumerPrania(pralkaTryb);
         }
     }
 }
