@@ -61,7 +61,21 @@ internal class Program
             
             Console.WriteLine("Podaj numer prania 1..12");
             int pralkaTryb = Int32.Parse(Console.ReadLine());
-            pralka.ustawNumerPrania(pralkaTryb);
+            if (pralkaTryb >= 1 && pralkaTryb <= 12)
+            {
+                Console.WriteLine("Program został ustawiony");
+                pralka.ustawNumerPrania(pralkaTryb);
+            }
+            else
+            {
+                Console.WriteLine("Podano niepoprawny numer programu");
+            }
+
+            odkurzacz.on();
+            odkurzacz.on();
+            odkurzacz.on();
+            odkurzacz.wyswietlKomunikat("Odkurzacz wyładował się");
+            odkurzacz.off();
         }
     }
 }
